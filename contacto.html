@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>¡Contáctanos!</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<section id="contacto" style="background-color: #f1f1f1; padding: 50px 20px; text-align: center; font-family: Arial, sans-serif;">
+    <div class="contacto-container" style="max-width: 600px; margin: 0 auto; background-color: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="font-size: 2em; color: #333; margin-bottom: 20px; font-weight: bold; text-transform: uppercase;">¡Contáctanos!</h2>
+        <p style="font-size: 1.1em; color: #666; margin-bottom: 40px;">¿Tienes alguna pregunta o comentario? ¡Envíanos un mensaje!</p>
+        
+        <form action="mensaje.php" method="POST">
+            <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+                <label for="nombre" style="font-size: 1.1em; color: #333; margin-bottom: 8px; display: block;">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 12px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+                <label for="correo" style="font-size: 1.1em; color: #333; margin-bottom: 8px; display: block;">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required style="width: 100%; padding: 12px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+                <label for="mensaje" style="font-size: 1.1em; color: #333; margin-bottom: 8px; display: block;">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required style="width: 100%; padding: 12px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; color: #333; height: 80px; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" style="background-color: #f8ff32; color: black; padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.2em; cursor: pointer; transition: all 0.3s ease;" 
+                onmouseover="this.style.backgroundColor='#3498db'; this.style.transform='scale(1.1)'; this.style.color='white';" 
+                onmouseout="this.style.backgroundColor='#f8ff32'; this.style.transform='scale(1)'; this.style.color='black';">
+                Enviar Mensaje
+            </button>
+        </form>
+    </div>
+</section>
+</body>
+</html>
