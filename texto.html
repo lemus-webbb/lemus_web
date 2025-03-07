@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto en Movimiento</title>
+    <style>
+        body {
+            background-color: yellow;
+            color: blue;
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente llamativa */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+            position: absolute;
+            animation: mover 10s linear infinite;
+        }
+        @keyframes mover {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        TecnoLogical - ¡Un paso más cerca a tu futuro!ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ¡Aprovecha nuestras ofertas de hasta el 50%!
+    </div>
+</body>
+</html>
