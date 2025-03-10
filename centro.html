@@ -45,22 +45,29 @@
 
     .rastro {
       position: absolute;
-      width: 8px;
-      height: 8px;
-      background-color: rgba(0, 0, 0, 0.7);
+      width: 10px;
+      height: 10px;
+      background-color: #007bff; /* Rastro azul al principio */
       border-radius: 50%;
       pointer-events: none;
-      animation: rastroAnim 1s infinite;
+      animation: rastroAnim 0.6s ease-in-out forwards;
     }
 
     @keyframes rastroAnim {
       0% {
         transform: scale(1);
         opacity: 1;
+        background-color: #007bff; /* Azul */
+      }
+      50% {
+        transform: scale(2);
+        opacity: 0.6;
+        background-color: #ffcc00; /* Amarillo */
       }
       100% {
-        transform: scale(2);
+        transform: scale(3);
         opacity: 0;
+        background-color: #ffcc00; /* Amarillo */
       }
     }
 
@@ -219,26 +226,27 @@
       </div>
     </a>
   </div>
-<!-- Sección del catálogo -->
-<div class="catalog">
+  <!-- Sección del catálogo -->
+  <div class="catalog">
     <a href="#" onclick="forceDownload('catalogo.pdf')">
-        <div class="catalog-item" style="background-image: url('catalog.avif');">
-            ¡Descarga nuestro catálogo digital!
-        </div>
+      <div class="catalog-item" style="background-image: url('catalog.avif');">
+        ¡Descarga nuestro catálogo digital!
+      </div>
     </a>
-</div>
+  </div>
 
-<!-- Script para forzar la descarga -->
-<script>
+  <!-- Script para forzar la descarga -->
+  <script>
     function forceDownload(fileUrl) {
-        var link = document.createElement("a");
-        link.href = fileUrl;
-        link.download = fileUrl.split('/').pop(); // Obtiene el nombre del archivo automáticamente
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+      var link = document.createElement("a");
+      link.href = fileUrl;
+      link.download = fileUrl.split('/').pop(); // Obtiene el nombre del archivo automáticamente
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
-</script>
+  </script>
+
   <script>
     // Crear y seguir el rastro del mouse en el cuadro de texto
     var textBox = document.getElementById('text-box');
@@ -248,14 +256,15 @@
 
       var rastro = document.createElement('div');
       rastro.classList.add('rastro');
-      rastro.style.left = (x - 4) + 'px'; // Ajustar para centrar el círculo
-      rastro.style.top = (y - 4) + 'px';  // Ajustar para centrar el círculo
+      rastro.style.left = (x - 5) + 'px'; // Ajustar para centrar el círculo
+      rastro.style.top = (y - 5) + 'px';  // Ajustar para centrar el círculo
       textBox.appendChild(rastro);
 
       // Eliminar el rastro después de un tiempo
       setTimeout(function() {
         rastro.remove();
-      }, 1000); // El rastro se elimina después de 1 segundo
+      }, 600); // El rastro se elimina después de 0.6 segundos
     });
+  </script>
 </body>
 </html>
