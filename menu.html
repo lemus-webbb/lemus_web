@@ -4,40 +4,104 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>TecnoLogical</title>
 <style type="text/css">
-a:link {
-	text-decoration: none;
-	color: #FFF;
-}
-a:visited {
-	text-decoration: none;
-}
-a:hover {
+    a:link, a:visited {
+        text-decoration: none;
+        color: #FFF;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #000;
+    }
+    a:active {
 	text-decoration: none;
 	color: #000;
-}
-a:active {
-	text-decoration: none;
-}
+    }
+
+    /* Estilos del menú */
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+    }
+
+    nav li {
+        display: inline;
+        font-size: 1.75rem;
+        padding: 10px 20px;
+        border: 2px solid yellow;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    nav li a {
+        display: block;  /* Esto hace que el enlace ocupe todo el recuadro */
+        padding: 5px 10px;
+        color: white;
+        height: 100%;
+    }
+
+    nav li:hover {
+        transform: scale(1.2);
+        background-color: yellow;
+        color: black;
+    }
+
+    /* Estilo para el elemento seleccionado */
+    nav li.selected {
+        background-color: yellow; /* Cambia el fondo a amarillo */
+        color: black; /* Cambia el texto a negro */
+        border: 2px solid #000; /* Cambia el borde a negro */
+        transform: scale(1.2); /* Aumenta el tamaño del recuadro */
+    }
 </style>
+<script type="text/javascript">
+    // Función para seleccionar el ítem del menú
+    function selectMenuItem(event) {
+        // Remover la clase 'selected' de todos los elementos
+        const items = document.querySelectorAll('nav li');
+        items.forEach(item => item.classList.remove('selected'));
+
+        // Agregar la clase 'selected' al elemento que fue clickeado
+        event.target.closest('li').classList.add('selected');
+    }
+
+    // Función para agregar los eventos de clic y seleccionar la opción por defecto
+    window.onload = function() {
+        const menuItems = document.querySelectorAll('nav li');
+        menuItems.forEach(item => {
+            item.addEventListener('click', selectMenuItem);
+        });
+
+        // Seleccionar "Inicio" por defecto
+        const defaultSelected = document.querySelector('#inicio');
+        if (defaultSelected) {
+            defaultSelected.classList.add('selected');
+        }
+
+        // Comprobar qué página está abierta y seleccionar el ítem correspondiente
+        const currentPage = window.location.pathname.split('/').pop();
+        const items = document.querySelectorAll('nav li');
+        items.forEach(item => {
+            const link = item.querySelector('a');
+            if (link && link.getAttribute('href') === currentPage) {
+                item.classList.add('selected');
+            }
+        });
+    };
+</script>
 </head>
 
-<body>
 <body style="background-color: #3498db; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif;">
     <nav style="background-color: #3498db; padding: 20px; border-radius: 8px;">
-      <ul style="list-style-type: none; padding: 0; display: flex; justify-content: center; gap: 35px;">
-            <li style="display: inline; font-size: 1.75rem; padding: 10px 20px; border: 2px solid yellow; border-radius: 5px; color: white; cursor: pointer; transition: transform 0.3s, background-color 0.3s;" 
-                onmouseover="this.style.transform='scale(1.2)'; this.style.backgroundColor='yellow'; this.style.color='black';" 
-                onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='transparent'; this.style.color='white';">
-            <a href="centro.html" target="mainFrame">Inicio </a></li>
-            <li style="display: inline; font-size: 1.75rem; padding: 10px 20px; border: 2px solid yellow; border-radius: 5px; color: white; cursor: pointer; transition: transform 0.3s, background-color 0.3s;" 
-                onmouseover="this.style.transform='scale(1.2)'; this.style.backgroundColor='yellow'; this.style.color='black';" 
-                onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='transparent'; this.style.color='white';">
-            <a href="catalogo.html" target="mainFrame">Productos</a> </li>
-        <li style="display: inline; font-size: 1.75rem; padding: 10px 20px; border: 2px solid yellow; border-radius: 5px; color: white; cursor: pointer; transition: transform 0.3s, background-color 0.3s;" 
-                onmouseover="this.style.transform='scale(1.2)'; this.style.backgroundColor='yellow'; this.style.color='black';" 
-                onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='transparent'; this.style.color='white';">
-          <a href="contacto.html" target="mainFrame">Contacto </a></li>
+      <ul>
+            <li id="inicio"><a href="centro.html" target="mainFrame">Inicio</a></li>
+            <li><a href="catalogo.html" target="mainFrame">Productos</a></li>
+            <li><a href="contacto.html" target="mainFrame">Contacto</a></li>
       </ul>
-</nav>
+    </nav>
 </body>
 </html>

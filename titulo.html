@@ -1,31 +1,134 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>TecnoLogical</title>
-<style type="text/css">
-a:link {
-	text-decoration: none;
-	color: #3498db;
-}
-a:visited {
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: none;
-	color: #f8ff32;
-}
-a:active {
-	text-decoration: none;
-}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoLogical</title>
+    <style type="text/css">
+        /* Estilos para los enlaces */
+        a:link {
+            text-decoration: none;
+            color: #3498db;
+        }
+        a:visited {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+            color: #f8ff32;
+        }
+        a:active {
+            text-decoration: none;
+        }
+
+        /* Estilos del header */
+        h1 {
+            font-size: 3rem;
+            color: #3498db;
+            transition: color 0.3s, transform 0.3s;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1:hover {
+            color: #f8ff32;
+            transform: scale(1.1);
+        }
+
+        /* Estilo para el cuerpo */
+        body {
+            background-color: #eaeec1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            padding: 0 20px; /* Espaciado lateral */
+        }
+
+        /* Alineación del logo */
+        .logo-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo-container img {
+            width: 91px;
+            height: 87px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.2);
+        }
+
+        /* Alineación del contador */
+        .contador-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: transparent;
+        }
+
+        /* Espaciado entre los elementos del body */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+    </style>
 </head>
 <body>
-<img src="logo.png" width="91" height="87" align="left" />
-<body style="background-color: #eaeec1; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif;">
-<h1 
-        style="font-size: 3rem; color: #3498db; transition: color 0.3s, transform 0.3s; text-align: center;" 
-        onmouseover="this.style.color='#f8ff32'; this.style.transform='scale(1.1)';" 
-        onmouseout="this.style.color='#3498db'; this.style.transform='scale(1)';"><a href="centro.html" target="mainFrame"><a href="centro.html" target="mainFrame"></a><a href="centro.html" target="mainFrame"></a>TecnoLogical</a><a href="https://www.contadorvisitasgratis.com" title="contador de visitas blogger"><img src="https://counter6.optistats.ovh/private/contadorvisitasgratis.php?c=r7khkax1xzpjs6u6ud9xgq3lenzs9gaw" alt="contador de visitas blogger" title="contador de visitas blogger" border="0" align="top" /></a></h1>
+    <!-- Contenedor del logo (a la izquierda) -->
+    <div class="logo-container">
+        <a href="https://www.instagram.com/tecnologicalgt/" target="new">
+            <img src="logo.png" alt="Logo de TecnoLogical">
+        </a>
+    </div>
+
+    <!-- Contenido central -->
+    <div class="content">
+        <!-- Título -->
+        <h1>
+            <a href="centro.html" target="mainFrame">TecnoLogical</a>
+        </h1>
+    </div>
+
+    <!-- Contenedor del contador (a la derecha) -->
+    <div class="contador-container">
+        <!-- Histats.com  (div with counter) -->
+        <div id="histats_counter"></div>
+
+        <!-- Histats.com  START  (async) -->
+        <script type="text/javascript">
+            var _Hasync = _Hasync || [];
+            _Hasync.push(['Histats.start', '1,4935904,4,511,95,18,00000000']);
+            _Hasync.push(['Histats.fasi', '1']);
+            _Hasync.push(['Histats.track_hits', '']);
+            _Hasync.push(['Histats.framed_page', '']);
+            (function() {
+                var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+                hs.src = ('//s10.histats.com/js15_as.js');
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+            })();
+        </script>
+        <noscript>
+            <a href="/" target="_blank">
+                <img src="//sstatic1.histats.com/0.gif?4935904&101" alt="contador de visitas gratis" border="0">
+            </a>
+        </noscript>
+        <!-- Histats.com  END  -->
+    </div>
 </body>
 </html>
